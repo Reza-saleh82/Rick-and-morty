@@ -4,10 +4,15 @@ import './NavSite.css'
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { IoSearch } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
+import { useProductContext } from "../../context/contextBank";
+import { CiLogin } from "react-icons/ci";
 
 
 function NavSite() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const { setSearchData, setShow, show } = useProductContext();
+
+
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
@@ -23,24 +28,28 @@ function NavSite() {
         </div>
         <div className={`boxLink ${showMobileMenu ? 'mobile-menu-active' : ''}`}>
           <div>
-            <NavLink style={{color:'#229799'}} className="link-nav brand-link" to='/'>Rick and Morty</NavLink>
+            <NavLink style={{ color: '#00ADB5' }} className="link-nav brand-link" to='/'>Rick and Morty</NavLink>
           </div>
           <div>
-            <NavLink style={{color:'#48CFCB'}} className="link-nav" to='AboutUs'>About Us</NavLink>
+            <NavLink style={{ color: '#FFB823' ,fontFamily:'fantasy', fontSize:'x-large' }} className="link-nav">IMDB</NavLink>
           </div>
           <div>
-            <NavLink style={{color:'#48CFCB'}} className="link-nav" to='Login'>Login</NavLink>
+            <NavLink style={{ color: '#EEEEEE' }} className="link-nav" onClick={() => setShow(true)}>Login<CiLogin style={{fontSize:'x-large'}}/></NavLink>
           </div>
           <div>
-            <NavLink style={{color:'red',fontSize:'xx-large'}} className="link-nav" to='Login'><CiHeart /></NavLink>
+            <NavLink to='like'>
+              <Button style={{ border: '0' }} variant="outline-danger" >
+                <CiHeart style={{ fontSize: 'x-large' }} />
+              </Button>
+            </NavLink>
           </div>
         </div>
         <div className={`boxSearch ${showMobileMenu ? 'mobile-menu-active' : ''}`}>
-            <div>
-              <Button variant="outline-secondary">search</Button>
-            </div>
-            <div>
-            <input type="text" className="mr-sm-2 searchInput"/>
+          <div>
+            <Button variant="outline-info">search</Button>
+          </div>
+          <div>
+            <input onChange={(e) => setSearchData(e.target.value)} type="text" className="mr-sm-2 searchInput" />
           </div>
         </div>
       </Container>

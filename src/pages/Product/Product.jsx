@@ -4,12 +4,13 @@ import React from "react";
 
 function Product() {
   const { id } = useParams();
+  console.log('reza');
+  
   return (
-    <div style={{ display: "flex", justifyContent: "center", flexDirection: "row", height: "700px" }}>
-      <div style={{ width: "40%", height: "100%", backgroundColor: "gray" }}>
-        <Outlet />
+    <div>
+      <div>
+        <Outlet/>
       </div>
-      <div style={{ width: "60%", height: "100%", backgroundColor: "blue" }}></div>
     </div>
   );
 }

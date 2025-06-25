@@ -1,0 +1,51 @@
+.showBox {
+    margin-top: 100px;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.productBox {
+    margin-top: 30px;
+    width: 90%;
+    height: 500px;
+    backdrop-filter: blur(20px);
+    border: 2px white solid;
+    border-radius: 20px;
+    display: flex;
+}
+
+.productBox div {
+    align-items: center;
+    text-align: center;
+}
+
+.maghale-img-box {
+    margin-left: 50px;
+    position: relative;
+    border-radius: 18px;
+    padding: 2rem 1rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    direction: ltr;
+}
+
+.maghale-img {
+    max-width: 400px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(52, 152, 219, 0.10);
+}
+
+.imfoBox{
+}
+
+.statusAlive{
+    color: green;
+}
+.statusDead{
+    color: red;
+}

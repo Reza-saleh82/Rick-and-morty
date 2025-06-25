@@ -1,30 +1,27 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import './Home.css'
-import { useProductContext } from "../../context/contextBank";
-import { Link } from "react-router";
+import { Button, Card, Container } from "react-bootstrap";
 import { CiHeart } from "react-icons/ci";
+import { Link } from "react-router";
+import { useProductContext } from "../../context/contextBank";
 import { FaRegCircle } from "react-icons/fa";
 
 
-function Home() {
-  const { productsData, productFilter, handleLikeList, likeList , setShowId } = useProductContext();
-
-  const searchId = (id) => {
-    return likeList.map((item) => item.id).includes(id);
-  };
-
-
+function Like() {
+  const {  likeList , handleLikeList } = useProductContext();
+  
+      const searchId = (id) => {
+      return likeList.map((item) => item.id).includes(id);
+    };
   return (
-    <>
+    <div>
       <div style={{ marginTop: '100px' }}>
         <Container fluid="md">
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div className="products">
               <div className="boxH2">
-                <h1 style={{ color: 'black' }}>character</h1>
+                <h1 style={{ color: 'black' }}><CiHeart />favorites<CiHeart /></h1>
               </div>
               <div className="boxProducts">
-                {productFilter && productFilter.map((item) => (
+                {likeList && likeList.map((item) => (
                   <Card style={{backgroundColor:'#222831'}} className="product-card" key={item.id}>
                     <div className="image-wrapper">
                       <Card.Img variant="top" src={item.image} />
@@ -61,9 +58,8 @@ function Home() {
           </div>
         </Container>
       </div>
-
-    </>
+    </div>
   )
 }
 
-export default Home;
+export default Like;

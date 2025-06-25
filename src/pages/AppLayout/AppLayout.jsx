@@ -1,13 +1,19 @@
-import NavSite from "../../component/NavSite/NavSite";
-import { Outlet } from "react-router";
+
+import { Outlet } from 'react-router';
+import NavSite from '../../component/NavSite/NavSite';
+import Offcanvans from './Offcanvans/Offcanvans';
+
 
 function AppLayout() {
+  
+
   return (
     <div>
-      <div><NavSite /></div>
-      <div style={{ height: "300px" }}>
+      <NavSite />
+      <div style={{ height: '300px' }}>
         <Outlet />
       </div>
+      <Offcanvans/>
     </div>
   );
 }
