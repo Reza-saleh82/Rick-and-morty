@@ -30,9 +30,8 @@ const ProductProvider = ({ children }) => {
 
 
 
-
   useEffect(() => {
-    if (searchData == '') {
+    if (searchData === '') {
       setProductFilter(productsData)
     }
     else {
@@ -41,7 +40,7 @@ const ProductProvider = ({ children }) => {
       })
       setProductFilter(dataFilter)
     }
-  }, [searchData])
+  }, [searchData, productsData])
 
 
   useEffect(() => {
