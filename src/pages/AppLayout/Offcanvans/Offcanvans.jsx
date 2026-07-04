@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 // import { Container } from './styles';
 
 function Offcanvans() {
-    const { show, setShow, likeList , setLikeList} = useProductContext();
+    const { show, setShow, likeList } = useProductContext();
 
     const searchId = (id) => {
     return likeList.map((item) => item.id).includes(id);
