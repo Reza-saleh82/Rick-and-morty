@@ -6,7 +6,7 @@ import { FaRegCircle } from "react-icons/fa";
 
 
 function Like() {
-  const {  likeList , handleLikeList } = useProductContext();
+  const {  likeList , handleLikeList , setShowId } = useProductContext();
   
       const searchId = (id) => {
       return likeList.map((item) => item.id).includes(id);
@@ -32,7 +32,7 @@ function Like() {
                       <Card.Text>
                         <div style={{ display: 'flex', flexDirection: 'row' }}>
                           <div style={{ margin: '0 5px' }}>
-                            <div className={`${item.status == 'Alive' ? "statusAlive" : item.status == 'Dead' ? "statusDead " : "text-secondary"}`}><FaRegCircle /></div>
+                            <div className={`${item.status === 'Alive' ? "statusAlive" : item.status === 'Dead' ? "statusDead " : "text-secondary"}`}><FaRegCircle /></div>
                           </div>
                           <div style={{ display: 'flex', flexDirection: 'row' }}>
                             <div style={{ margin: '0 5px', color: '#EEEEEE' }}>
