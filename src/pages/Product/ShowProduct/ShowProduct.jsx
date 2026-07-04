@@ -9,12 +9,11 @@ function ShowProduct() {
     const [selectItem, setSelectItem] = useState({})
     useEffect(() => {
         productsData.map((item) => {
-            if (item.id == showId) {
+            if (item.id === showId) {
                 setSelectItem(item)
             }
         })
-    }, [showId])
-    console.log(selectItem);
+    }, [showId, productsData])
 
     return (
         <div>
@@ -34,7 +33,7 @@ function ShowProduct() {
                                     </div>
                                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                                         <div>
-                                            <div className={`${selectItem.status == 'Alive' ? "statusAlive" : selectItem.status == 'Dead' ? "statusDead " : "text-secondary"}`}><FaRegCircle /></div>
+                                            <div className={`${selectItem.status === 'Alive' ? "statusAlive" : selectItem.status === 'Dead' ? "statusDead " : "text-secondary"}`}><FaRegCircle /></div>
                                         </div>
                                         <div style={{ display: 'flex', flexDirection: 'row' }}>
                                             <div style={{ margin: '0 5px', color: '#EEEEEE' }}>
